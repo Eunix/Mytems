@@ -2,8 +2,6 @@
 
 one:
   name: MyString
-  box: one
 
 two:
   name: MyString
-  box: two

@@ -1,4 +1,6 @@
 Mytems::Application.routes.draw do
+  resources :boxes
+
   resources :items
 
   # The priority is based upon order of creation:
