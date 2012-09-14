@@ -22,6 +22,7 @@ end
 
 group :development, :test do
   gem "guard"
+  gem "guard-test"
   gem "test-unit"
 end
 
