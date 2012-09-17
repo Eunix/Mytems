@@ -1,4 +1,6 @@
 Mytems::Application.routes.draw do
+  resources :categories
+
   resources :boxes
 
   resources :items

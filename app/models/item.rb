@@ -3,6 +3,7 @@ class Item < ActiveRecord::Base
   validates_presence_of :name
 
   belongs_to :box
+  has_many   :categories
 
   before_create :parse_name
 

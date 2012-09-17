@@ -11,4 +11,14 @@ class ItemTest < ActiveSupport::TestCase
     assert_equal "new item", item.name
     assert_equal "kitchen", item.box.name
   end
+
+  test "should parse only first @ as box" do
+    item = Item.create :name => "new item @kitchen @container"
+    assert_equal "new item", item.name
+    assert_equal "kitchen", item.box.name
+  end
+
+  test "should parse # as categories" do
+
+  end
 end
