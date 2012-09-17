@@ -8,7 +8,7 @@ class ItemTest < ActiveSupport::TestCase
 
   test "should parse @ as box" do
     item = Item.create :name => "new item @kitchen"
-    assert_equal item.name, "new item"
-    assert_equal item.box.name, "kitchen"
+    assert_equal "new item", item.name
+    assert_equal "kitchen", item.box.name
   end
 end
