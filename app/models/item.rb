@@ -3,7 +3,7 @@ class Item < ActiveRecord::Base
   validates_presence_of :name
 
   belongs_to :box
-  has_many   :categories
+  has_and_belongs_to_many   :categories
 
   before_create :parse_name
 
@@ -16,7 +16,11 @@ class Item < ActiveRecord::Base
       self.box = Box.find_or_create_by_name(boxes[0][0])
     end
 
-    #categories = name.scan(/#(\w)/)
+    categories = name.scan(/#(\w+)/)
+    categories.each do |category_name|
+      self.categories << Category.find_or_create_by_name(category_name[0])
+    end
+
     self.name = name.gsub(/@(\w+)|#(\w+)/, '').strip
   end
 end
