@@ -8,12 +8,8 @@ class ItemsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
+    assert_not_nil assigns(:item)
     assert_not_nil assigns(:items)
-  end
-
-  test "should get new" do
-    get :new
-    assert_response :success
   end
 
   test "should create item" do
@@ -45,5 +41,10 @@ class ItemsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to items_path
+  end
+
+  test "should have a new form on index" do
+    get :index
+    assert_select 'form'
   end
 end

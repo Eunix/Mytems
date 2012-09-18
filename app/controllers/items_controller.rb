@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
+    @item  = Item.new
     @items = Item.all
 
     respond_to do |format|
@@ -17,17 +18,6 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @item }
-    end
-  end
-
-  # GET /items/new
-  # GET /items/new.json
-  def new
-    @item = Item.new
-
-    respond_to do |format|
-      format.html # new.html.erb
       format.json { render json: @item }
     end
   end
