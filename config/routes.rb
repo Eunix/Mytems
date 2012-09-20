@@ -4,5 +4,5 @@ Mytems::Application.routes.draw do
   resource :search
 
   # Search is the main controller for the app
-  root :to => 'search#index'
+  root :to => 'items#index'
 end
