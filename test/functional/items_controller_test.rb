@@ -47,4 +47,16 @@ class ItemsControllerTest < ActionController::TestCase
     get :index
     assert_select 'form'
   end
+
+  test "should have a list of boxes in new/edit form" do
+    get :edit, id: @item
+    assert_select "#item_box" do
+      assert_select "option"
+    end
+
+    get :new
+    assert_select "#item_box" do
+      assert_select "option"
+    end
+  end
 end

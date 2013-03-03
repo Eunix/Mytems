@@ -25,6 +25,7 @@ gem 'bootstrap-sass'
 group :development, :test do
   gem "guard"
   gem "guard-test"
+  gem 'rb-fsevent', '~> 0.9'
   gem "test-unit"
 end
 

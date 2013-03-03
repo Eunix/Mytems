@@ -23,6 +23,11 @@ class ItemsController < ApplicationController
   end
 
   # GET /items/1/edit
+  def new
+    @item = Item.new
+  end
+
+  # GET /items/1/edit
   def edit
     @item = Item.find(params[:id])
   end
